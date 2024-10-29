@@ -267,14 +267,16 @@ function getValidBrainRuns() {
   return validBrainRuns;
 }
 
-function reverseImageSearchActivator() {
-  const dataset = useRecoilValue(fos.dataset);
-  const brainMethods = dataset.brainMethods;
-  for (let i = 0; i < brainMethods.length; i++) {
-    const brConfig = brainMethods[i].config;
-    if (brConfig.cls.includes("Similarity")) {
-      return true;
-    }
-  }
-  return false;
+function reverseImageSearchActivator(args) {
+  return true;
+  // debugger
+  // const dataset = useRecoilValue(fos.dataset);
+  // const brainMethods = dataset.brainMethods;
+  // for (let i = 0; i < brainMethods.length; i++) {
+  //   const brConfig = brainMethods[i].config;
+  //   if (brConfig.cls.includes("Similarity")) {
+  //     return true;
+  //   }
+  // }
+  // return false;
 }

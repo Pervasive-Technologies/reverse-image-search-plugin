@@ -1,9 +1,12 @@
 {
-  "type": "module",
   "name": "@jacobmarks/reverse_image_search",
   "version": "1.0.0",
+  "type": "module",
   "main": "src/ReverseImageSearchPlugin.tsx",
   "license": "MIT",
+  "fiftyone": {
+    "script": "dist/index.umd.js"
+  },
   "scripts": {
     "dev": "IS_DEV=true && nodemon --watch ./src --ext js,jsx,ts,tsx --exec 'yarn build'",
     "build": "vite build",
@@ -23,10 +26,11 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/node": "^22.7.6",
     "@vitejs/plugin-react": "^4.3.2",
-    "@voxel51/fiftyone-js-plugin-build": "^1.0.0",
+    "@voxel51/fiftyone-js-plugin-build": "^1.0.22",
     "typescript": "^5.6.3",
     "vite": "^5.4.9",
-    "vite-plugin-externalize-deps": "^0.8.0"
+    "vite-plugin-externalize-deps": "^0.8.0",
+    "vite-plugin-externals": "^0.6.2"
   },
   "packageManager": "yarn@3.5.1"
 }
