@@ -38,7 +38,7 @@ foz.register_zoo_model_source(MODEL_GITHUB_URL)
 #dataset = fo.load_dataset("your-dataset")
 
 # Load the model
-model = foz.load_zoo_model("pt-cpg-google-vit-large-patch16-224")
+#model = foz.load_zoo_model("pt-cpg-google-vit-large-patch16-224")
 
 
 
@@ -73,8 +73,8 @@ def run_reverse_image_search(ctx):
     dataset = ctx.dataset
     index_name = ctx.params.get("index")
     index = dataset.load_brain_results(index_name)
-    #model = index.get_model()
-    model = model
+    model = index.get_model()
+    #model = model
     
     k = ctx.params.get("num_results")
 
