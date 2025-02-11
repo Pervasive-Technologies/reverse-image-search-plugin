@@ -28,7 +28,7 @@ import numpy as np
 
 
 import os
-print(os.getcwd())
+print("plugin running",os.getcwd())
 
 MODEL_GITHUB_URL = "https://github.com/Pervasive-Technologies/pt-cpg-google-vit-large-patch16-224/"  # Replace with your actual URL
 
