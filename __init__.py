@@ -12,7 +12,7 @@ fiftyone plugins delete @jacobmarks/reverse_image_search
 
 fiftyone plugins download https://github.com/Pervasive-Technologies/reverse-image-search-plugin
 
-fiftyone plugins delete reverse-image-search-plugin
+fiftyone plugins delete @jacobmarks/reverse_image_search
 
 """
 
@@ -22,8 +22,23 @@ from PIL import Image
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
 
+import fiftyone.zoo as foz
+import fiftyone.brain as fob
+import numpy as np
+
+
 import os
 print(os.getcwd())
+
+MODEL_GITHUB_URL = "https://github.com/Pervasive-Technologies/pt-cpg-google-vit-large-patch16-224/"  # Replace with your actual URL
+
+foz.register_zoo_model_source(MODEL_GITHUB_URL)
+
+# Load dataset
+#dataset = fo.load_dataset("your-dataset")
+
+# Load the model
+model = foz.load_zoo_model("pt-cpg-google-vit-large-patch16-224")
 
 
 
@@ -58,8 +73,9 @@ def run_reverse_image_search(ctx):
     dataset = ctx.dataset
     index_name = ctx.params.get("index")
     index = dataset.load_brain_results(index_name)
-    model = index.get_model()
-
+    #model = index.get_model()
+    model = model
+    
     k = ctx.params.get("num_results")
 
     query_image = handle_request(ctx.params)
