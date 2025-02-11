@@ -2,7 +2,18 @@
 
 | Copyright 2017-2023, Voxel51, Inc.
 | `voxel51.com <https://voxel51.com/>`_
-|
+|  PERVASIVE CUSTOMISED VERSION
+
+fiftyone plugins list
+
+fiftyone plugins download https://github.com/jacobmarks/reverse-image-search-plugin
+
+fiftyone plugins delete @jacobmarks/reverse_image_search
+
+fiftyone plugins download https://github.com/Pervasive-Technologies/reverse-image-search-plugin
+
+fiftyone plugins delete reverse-image-search-plugin
+
 """
 
 from io import BytesIO
@@ -10,6 +21,10 @@ from PIL import Image
 
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
+
+import os
+print(os.getcwd())
+
 
 
 def handle_request(payload):
